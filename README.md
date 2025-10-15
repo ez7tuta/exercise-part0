@@ -1,26 +1,26 @@
-#Notes App Diagrams
+# Notes App Diagrams
 
 ## 0.4: New note diagram
 
-```
+```mermaid
 sequenceDiagram
-participant browser
-participant server
-browser->>>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note  (note content)
-activate server
-server-->>browser: Redirect /Reload page
-deactivate server
-browser-->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
-activate server
-server-->>browser: HTML document
-deactivate server
-browser-->>server: GET .../main.css
-server-->>browser: CSS file
-browser-->>browser: GET .../main.js
-server-->>browser: JS file
-browser-->>server: GET .../data.json
-server-->>browser: Notes data (JSON)
-note right of browser: Browser renders notes
+    participant browser
+    participant server
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note (note content)
+    activate server
+    server-->>browser: Redirect / Reload page
+    deactivate server
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+    browser->>server: GET .../main.css
+    server-->>browser: CSS file
+    browser->>server: GET .../main.js
+    server-->>browser: JS file
+    browser->>server: GET .../data.json
+    server-->>browser: Notes data (JSON)
+    Note right of browser: Browser renders notes
 ```
 
 
