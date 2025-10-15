@@ -23,21 +23,22 @@ server-->>browser: Notes data (JSON)
 note right of browser: Browser renders notes
 ```
 
+
 ## 0.5: Single page app diagram
 
 ```mermaid
 sequenceDiagram
-participant browser
-pariticipant server
-browser-->>server: GET ../spa
-server-->>browser: HTML document
-browser-->>server: GET .../main.css
-server-->>browser: CSS file
-browser-->>server: GET .../spa.js
-server-->>browser: Js file
-browser-->>server: GET .../data.json
-server-->>browser: Notes data (JSON)
-note right of browser: Browser renders notes dynamically (no reload)
+    participant browser
+    participant server
+    browser->>server: GET .../spa
+    server-->>browser: HTML document
+    browser->>server: GET .../main.css
+    server-->>browser: CSS file
+    browser->>server: GET .../spa.js
+    server-->>browser: JS file
+    browser->>server: GET .../data.json
+    server-->>browser: Notes data (JSON)
+    Note right of browser: Browser renders notes dynamically (no reload)
 ```
 
 ## 0.6: New note in Single page app diagram
