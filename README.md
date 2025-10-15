@@ -6,6 +6,7 @@
 sequenceDiagram
     participant browser
     participant server
+    Note right of browser: User writes note and clicks Save
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note (note content)
     activate server
     server-->>browser: Redirect / Reload page
@@ -23,14 +24,13 @@ sequenceDiagram
     Note right of browser: Browser renders notes
 ```
 
-
 ## 0.5: Single page app diagram
 
 ```mermaid
 sequenceDiagram
     participant browser
     participant server
-    browser->>server: GET .../spa
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
     server-->>browser: HTML document
     browser->>server: GET .../main.css
     server-->>browser: CSS file
@@ -48,7 +48,7 @@ sequenceDiagram
     participant browser
     participant server
     Note right of browser: User writes note and clicks Save
-    browser->>server: POST .../new_note (note as JSON)
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa (note as JSON)
     server-->>browser: Confirmation/OK
     Note right of browser: Browser updates notes list dynamically (no reload)
 ```
