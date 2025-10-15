@@ -48,7 +48,7 @@ sequenceDiagram
     participant browser
     participant server
     Note right of browser: User writes note and clicks Save
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa (note as JSON)
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note (note as JSON)
     server-->>browser: Confirmation/OK
     Note right of browser: Browser updates notes list dynamically (no reload)
 ```
